@@ -4,13 +4,21 @@ on:
   push:
     tags:
       - '*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: text
+        required: true
 
 jobs:
   build:
 
     name: test
     runs-on: ubuntu-latest
+    
+    env:
+      tag: ${{ github.event.inputs.tag || github.ref_name }}
 
     steps:
     - name: test ref_name
-      run: echo ${{ github.ref_name }}
+      run: echo $tag
