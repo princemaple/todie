@@ -31,4 +31,4 @@ jobs:
       uses: andstor/file-existence-action@v1
       id: check_deb
       with:
-        files: "$tag"
+        files: ${{ env.tag }}
