@@ -22,3 +22,9 @@ jobs:
     steps:
     - name: test ref_name
       run: echo $tag
+      
+    - name: Check file
+      uses: andstor/file-existence-action@v1
+      id: check_deb
+      with:
+        files: $tag
