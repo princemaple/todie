@@ -1,0 +1,16 @@
+name: test tagging
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: test ref_name
+      run: echo ${{ github.ref_name }}
