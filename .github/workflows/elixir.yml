@@ -20,6 +20,8 @@ jobs:
       tag: ${{ github.event.inputs.tag || github.ref_name }}
 
     steps:
+    - uses: actions/checkout@3
+
     - name: test ref_name
       run: echo $tag
       
