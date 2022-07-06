@@ -25,7 +25,7 @@ jobs:
     - name: test ref_name
       run: |
         ls
-        echo $tag
+        echo ${{ github.sha }}
       
     - name: Check file
       uses: andstor/file-existence-action@v1
