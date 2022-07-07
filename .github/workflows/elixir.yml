@@ -1,9 +1,8 @@
 name: test tagging
 
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       tag:
@@ -25,6 +24,7 @@ jobs:
     - name: test ref_name
       run: |
         ls
+        echo ${{ env.tag }}
         echo ${{ github.sha }}
       
     - name: Check file
